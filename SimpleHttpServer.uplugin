@@ -1,0 +1,24 @@
+{
+	"FileVersion": 3,
+	"Version": 1,
+	"VersionName": "1.0",
+	"FriendlyName": "SimpleHttpServer",
+	"Description": "Simple Http Server supported Blueprints",
+	"Category": "Other",
+	"CreatedBy": "Mikhail Davydov",
+	"CreatedByURL": "https://github.com/Kaboms",
+	"DocsURL": "",
+	"MarketplaceURL": "",
+	"SupportURL": "",
+	"CanContainContent": true,
+	"IsBetaVersion": false,
+	"IsExperimentalVersion": false,
+	"Installed": false,
+	"Modules": [
+		{
+			"Name": "SimpleHttpServer",
+			"Type": "Runtime",
+			"LoadingPhase": "Default"
+		}
+	]
+}
