@@ -2,7 +2,7 @@
 
 Easy to setup from Blueprints and C++
 ![BlueprintsServerSetup](Docs/BlueprintsServerSetup.png)
-![BlueprintsResponse](Docs/BlueprintsResponse)
+![BlueprintsResponse](Docs/BlueprintsResponse.png)
 ![BlueprintsPOSTResponse](Docs/BlueprintsPOSTResponse.png)
 
 Support Blueprints bindings to HTTP routes
