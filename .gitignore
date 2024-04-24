@@ -73,14 +73,4 @@ Plugins/*/Intermediate/*
 # Cache files for the editor to use
 DerivedDataCache/*
 
-Builds/
-*.reapeaks
-/.idea/.idea.BattleTest/.idea
-
-# FMOD .lib
-!Plugins/FMODStudio/Binaries/*/*.lib
-
 .idea/
-Content/FMOD/SonicTerror/.cache/
-Content/FMOD/SonicTerror/.unsaved/
-Content/FMOD/SonicTerror/.user/
