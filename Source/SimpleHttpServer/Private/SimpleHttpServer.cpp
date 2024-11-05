@@ -69,12 +69,15 @@ void USimpleHttpServer::BindRoute(FString HttpPath, ENativeHttpServerRequestVerb
 		FHttpRouteHandle HttpRouteHandle = HttpRouter->BindRoute(FHttpPath(HttpPath), (EHttpServerRequestVerbs)Verbs,
 #if UE_VERSION_OLDER_THAN(5, 4, 0)
 			[&, HttpPath](const FHttpServerRequest& Request, const FHttpResultCallback& OnComplete)
-#else
-			FHttpRequestHandler::CreateLambda([&, HttpPath](const FHttpServerRequest& Request, const FHttpResultCallback& OnComplete)
-#endif
 			{
 				return HandleRequest(HttpPath, Request, OnComplete);
 			});
+#else
+			FHttpRequestHandler::CreateLambda([&, HttpPath](const FHttpServerRequest& Request, const FHttpResultCallback& OnComplete)
+			{
+				return HandleRequest(HttpPath, Request, OnComplete);
+			}));
+#endif
 
 		CreatedRouteHandlers.Add(HttpRouteHandle);
 	}
@@ -93,12 +96,15 @@ void USimpleHttpServer::BindRouteNative(FString HttpPath, ENativeHttpServerReque
 		FHttpRouteHandle HttpRouteHandle = HttpRouter->BindRoute(FHttpPath(HttpPath), (EHttpServerRequestVerbs)Verbs,
 #if UE_VERSION_OLDER_THAN(5, 4, 0)
 			[&, HttpPath](const FHttpServerRequest& Request, const FHttpResultCallback& OnComplete)
-#else
-			FHttpRequestHandler::CreateLambda([&, HttpPath](const FHttpServerRequest& Request, const FHttpResultCallback& OnComplete)
-#endif
 			{
 				return HandleRequestNative(HttpPath, Request, OnComplete);
 			});
+#else
+			FHttpRequestHandler::CreateLambda([&, HttpPath](const FHttpServerRequest& Request, const FHttpResultCallback& OnComplete)
+			{
+				return HandleRequestNative(HttpPath, Request, OnComplete);
+			}));
+#endif
 
 		CreatedRouteHandlers.Add(HttpRouteHandle);
 	}
