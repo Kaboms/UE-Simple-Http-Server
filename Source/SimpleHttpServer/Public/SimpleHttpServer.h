@@ -7,6 +7,8 @@
 
 #include "SimpleHttpServer.generated.h"
 
+DECLARE_LOG_CATEGORY_EXTERN(LogSimpleHttpServer, Log, All);
+
 UENUM(BlueprintType)
 enum class ENativeHttpServerRequestVerbs : uint8
 {

@@ -6,6 +6,8 @@
 #include "HttpServerResponse.h"
 #include "Misc/EngineVersionComparison.h"
 
+DEFINE_LOG_CATEGORY(LogSimpleHttpServer);
+
 void USimpleHttpServer::BeginDestroy()
 {
 	Super::BeginDestroy();
@@ -17,7 +19,7 @@ void USimpleHttpServer::StartServer(int32 ServerPort)
 {
 	if (ServerPort <= 0)
 	{
-		UE_LOG(LogTemp, Error, TEXT("Could not start HttpServer, port number must be greater than zero!"));
+		UE_LOG(LogSimpleHttpServer, Error, TEXT("Could not start HttpServer, port number must be greater than zero!"));
 		return;
 	}
 
@@ -34,17 +36,19 @@ void USimpleHttpServer::StartServer(int32 ServerPort)
 		HttpServerModule.StartAllListeners();
 
 		bServerStarted = true;
-		UE_LOG(LogTemp, Log, TEXT("Web server started on port = %d"), CurrentServerPort);
+		UE_LOG(LogSimpleHttpServer, Log, TEXT("Web server started on port = %d"), CurrentServerPort);
 	}
 	else
 	{
 		bServerStarted = false;
-		UE_LOG(LogTemp, Error, TEXT("Could not start web server on port = %d"), CurrentServerPort);
+		UE_LOG(LogSimpleHttpServer, Error, TEXT("Could not start web server on port = %d"), CurrentServerPort);
 	}
 }
 
 void USimpleHttpServer::StopServer()
 {
+	UE_LOG(LogSimpleHttpServer, Log, TEXT("StopServer on Port: %d"), CurrentServerPort);
+
 	FHttpServerModule& httpServerModule = FHttpServerModule::Get();
 	httpServerModule.StopAllListeners();
 
@@ -83,7 +87,7 @@ void USimpleHttpServer::BindRoute(FString HttpPath, ENativeHttpServerRequestVerb
 	}
 	else
 	{
-		UE_LOG(LogTemp, Error, TEXT("Failed bind to HttpRouter: router is invalid"));
+		UE_LOG(LogSimpleHttpServer, Error, TEXT("Failed bind to HttpRouter: router is invalid"));
 	}
 }
 
@@ -110,7 +114,7 @@ void USimpleHttpServer::BindRouteNative(FString HttpPath, ENativeHttpServerReque
 	}
 	else
 	{
-		UE_LOG(LogTemp, Error, TEXT("Failed bind to HttpRouter: router is invalid"));
+		UE_LOG(LogSimpleHttpServer, Error, TEXT("Failed bind to HttpRouter: router is invalid"));
 	}
 }
 

@@ -3,5 +3,10 @@
 
 USimpleHttpServer* UHttpServerSubsystem::GetSimpleHttpServer(TSubclassOf<USimpleHttpServer> SimpleHttpServerClass)
 {
-    return NewObject<USimpleHttpServer>(this, SimpleHttpServerClass);
+    if (!IsValid(Singleton))
+    {
+        Singleton = NewObject<USimpleHttpServer>(this, SimpleHttpServerClass);
+    }
+
+    return Singleton;
 }
