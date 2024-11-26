@@ -205,17 +205,11 @@ FNativeHttpServerResponse USimpleHttpServer::MakeResponse(FString Text, FString 
 
 UWorld* USimpleHttpServer::GetWorld() const
 {
-	if (!GetOuter())
-	{
-		return nullptr;
-	}
-
-	if (Cast<UPackage>(GetOuter()) != nullptr)
-	{
-		return Cast<UWorld>(GetOuter()->GetOuter());
-	}
-
-	return GetOuter()->GetWorld();
+#if WITH_EDITOR
+	return GWorld;
+#else
+	return Super::GetWorld();
+#endif
 }
 
 void USimpleHttpServer::BindRoutes()

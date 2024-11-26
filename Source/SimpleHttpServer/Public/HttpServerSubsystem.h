@@ -16,7 +16,7 @@ class UHttpServerSubsystem : public UGameInstanceSubsystem
 
 public:
 	// Use this function to get the server to live as long as the GameInstance is alive.
-	UFUNCTION(BlueprintCallable, Meta= (DeterminesOutputType = "SimpleHttpServerClass"))
+	UFUNCTION(BlueprintCallable, Meta= (DeterminesOutputType = "SimpleHttpServerClass"), Category = "Simple HTTP Server")
 	USimpleHttpServer* GetSimpleHttpServer(TSubclassOf<USimpleHttpServer> SimpleHttpServerClass);
 
 private:

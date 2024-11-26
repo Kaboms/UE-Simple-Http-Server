@@ -37,26 +37,26 @@ struct FNativeHttpServerRequest
 	GENERATED_BODY()
 
 public:
-	UPROPERTY(BlueprintReadOnly)
+	UPROPERTY(BlueprintReadOnly, Category = "NativeHttpServerRequest")
 	FString RelativePath;
 
-	UPROPERTY(BlueprintReadOnly)
+	UPROPERTY(BlueprintReadOnly, Category = "Verb")
 	/** The HTTP-compliant verb  */
 	ENativeHttpServerRequestVerbs Verb = ENativeHttpServerRequestVerbs::NONE;
 
-	UPROPERTY(BlueprintReadOnly)
+	UPROPERTY(BlueprintReadOnly, Category = "Header")
 	/** The HTTP headers */
 	TMap<FString, FString> Headers;
 
-	UPROPERTY(BlueprintReadOnly)
+	UPROPERTY(BlueprintReadOnly, Category = "Params")
 	/** The query parameters */
 	TMap<FString, FString> QueryParams;
 
-	UPROPERTY(BlueprintReadOnly)
+	UPROPERTY(BlueprintReadOnly, Category = "Params")
 	/** The path parameters */
 	TMap<FString, FString> PathParams;
 
-	UPROPERTY(BlueprintReadOnly)
+	UPROPERTY(BlueprintReadOnly, Category = "NativeHttpServerRequest")
 	/** The raw body contents */
 	FString Body;
 };
@@ -76,17 +76,17 @@ class USimpleHttpServer : public UObject
 public:
 	virtual void BeginDestroy() override;
 
-	UFUNCTION(BlueprintPure, Category = "Http")
+	UFUNCTION(BlueprintPure, Category = "Simple HTTP Server")
 	bool IsServerStarted() const { return bServerStarted; }
 
-	UFUNCTION(BlueprintCallable)
+	UFUNCTION(BlueprintCallable, Category = "Simple HTTP Server")
 	void StartServer(int32 ServerPort = 8080);
 
-	UFUNCTION(BlueprintCallable)
+	UFUNCTION(BlueprintCallable, Category = "Simple HTTP Server")
 	void StopServer();
 
 	// Bind Blueprint event to route
-	UFUNCTION(BlueprintCallable)
+	UFUNCTION(BlueprintCallable, Category = "Simple HTTP Server")
 	void BindRoute(FString HttpPath, ENativeHttpServerRequestVerbs Verbs, FHttpServerRequestDelegate OnHttpServerRequest);
 
 	// Bind C++ function to route
@@ -102,7 +102,7 @@ public:
 	void FillNativeRequst(const FHttpServerRequest& Request, FNativeHttpServerRequest& NativeRequest);
 
 	// Make response to send this to client
-	UFUNCTION(BlueprintCallable)
+	UFUNCTION(BlueprintCallable, Category = "Simple HTTP Server")
 	FNativeHttpServerResponse MakeResponse(FString Text, FString ContentType = "application/json", int32 Code = 200);
 
 	virtual class UWorld* GetWorld() const override;
