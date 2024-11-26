@@ -2,9 +2,9 @@
 
 #include "CoreMinimal.h"
 #include "Subsystems/GameInstanceSubsystem.h"
+#include "SimpleHttpServer.h"
+#include "Templates/SubclassOf.h"
 #include "HttpServerSubsystem.generated.h"
-
-class USimpleHttpServer;
 
 /**
  * 

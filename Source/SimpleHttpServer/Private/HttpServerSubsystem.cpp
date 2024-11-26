@@ -1,5 +1,4 @@
 #include "HttpServerSubsystem.h"
-#include "SimpleHttpServer.h"
 
 USimpleHttpServer* UHttpServerSubsystem::GetSimpleHttpServer(TSubclassOf<USimpleHttpServer> SimpleHttpServerClass)
 {

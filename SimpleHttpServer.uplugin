@@ -18,7 +18,12 @@
 		{
 			"Name": "SimpleHttpServer",
 			"Type": "Runtime",
-			"LoadingPhase": "Default"
+			"LoadingPhase": "Default",
+			"PlatformAllowList": [
+				"Mac",
+				"Win64",
+				"Linux"
+			]
 		}
 	]
 }
