@@ -1,3 +1,5 @@
+// Copyright (C) 2024 Mikhail Davydov (kaboms) - All Rights Reserved
+
 #include "SimpleHttpServerModule.h"
 
 #define LOCTEXT_NAMESPACE "FSimpleHttpServerModule"

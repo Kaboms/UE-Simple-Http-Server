@@ -1,3 +1,5 @@
+// Copyright (C) 2024 Mikhail Davydov (kaboms) - All Rights Reserved
+
 #include "SimpleHttpServer.h"
 #include "HttpPath.h"
 #include "IHttpRouter.h"

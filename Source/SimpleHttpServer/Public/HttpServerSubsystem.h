@@ -1,3 +1,5 @@
+// Copyright (C) 2024 Mikhail Davydov (kaboms) - All Rights Reserved
+
 #pragma once
 
 #include "CoreMinimal.h"
