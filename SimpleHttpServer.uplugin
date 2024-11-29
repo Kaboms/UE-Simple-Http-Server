@@ -2,13 +2,14 @@
 	"FileVersion": 3,
 	"Version": 3,
 	"VersionName": "1.1.1",
-	"FriendlyName": "SimpleHttpServer",
-	"Description": "Simple Http Server supported Blueprints",
+	"FriendlyName": "Simple HTTP Server",
+	"Description": "Simple HTTP Server supported Blueprints",
 	"Category": "Other",
 	"CreatedBy": "Mikhail Davydov",
 	"CreatedByURL": "https://github.com/Kaboms",
 	"DocsURL": "https://github.com/Kaboms/UE-Simple-Http-Server",
-	"MarketplaceURL": "",
+	"MarketplaceURL": "com.epicgames.launcher://ue/Fab/product/6aebc9b3-f3fb-4904-96ef-40e78b2e7b99",
+	"FabURL": "com.epicgames.launcher://ue/Fab/product/6aebc9b3-f3fb-4904-96ef-40e78b2e7b99",
 	"SupportURL": "",
 	"CanContainContent": true,
 	"IsBetaVersion": false,
@@ -20,7 +21,6 @@
 			"Type": "Runtime",
 			"LoadingPhase": "Default",
 			"PlatformAllowList": [
-				"Mac",
 				"Win64",
 				"Linux"
 			]
