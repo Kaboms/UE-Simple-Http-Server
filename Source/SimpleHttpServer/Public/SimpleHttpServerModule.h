@@ -5,7 +5,7 @@
 #include "CoreMinimal.h"
 #include "Modules/ModuleManager.h"
 
-class FSimpleHttpServerModule : public IModuleInterface
+class SIMPLEHTTPSERVER_API FSimpleHttpServerModule : public IModuleInterface
 {
 public:
 

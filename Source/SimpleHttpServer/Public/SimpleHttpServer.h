@@ -71,7 +71,7 @@ DECLARE_DYNAMIC_DELEGATE_RetVal_OneParam(FNativeHttpServerResponse, FHttpServerR
  * HttpServer service.
  */
 UCLASS(Blueprintable, BlueprintType)
-class USimpleHttpServer : public UObject
+class SIMPLEHTTPSERVER_API USimpleHttpServer : public UObject
 {
 	GENERATED_BODY()
 

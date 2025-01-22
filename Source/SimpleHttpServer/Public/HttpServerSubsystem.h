@@ -12,7 +12,7 @@
  * 
  */
 UCLASS()
-class UHttpServerSubsystem : public UGameInstanceSubsystem
+class SIMPLEHTTPSERVER_API UHttpServerSubsystem : public UGameInstanceSubsystem
 {
 	GENERATED_BODY()
 
